@@ -134,6 +134,15 @@ ro.vendor.jpeg_decode_sw_opt=1
 vendor.mtk.vdec.waitkeyframeforplay=9
 ro.vendor.pref_scale_enable_cfg=1
 
+# Stagefright is a Vulnerability
+media.stagefright.enable-player=true
+media.stagefright.enable-meta=true
+media.stagefright.enable-scan=true
+media.stagefright.enable-http=true
+media.stagefright.enable-rtsp=true
+media.stagefright.enable-record=true
+
+
 # MediaTek
 ro.vendor.mediatek.version.branch=alps-mp-r0.mp1.tc8sp3-mt6785
 ro.vendor.mediatek.version.release=alps-mp-r0.mp1.tc8sp3-mt6785-V1.10_lcsh.xm.r0mp1.k69v1.64_P60
@@ -194,10 +203,16 @@ persist.vendor.md_c2k_cap_dep_check=0
 ro.vendor.md_log_memdump_wait=15
 ro.vendor.mtk_modem_monitor_support=1
 import /vendor/build_${ro.boot.radio.multisim.config}_vendor.prop
+ro.ril.enable.amr.wideband=1
+ro.config.vc_call_steps=20
+
 
 # Shutdown
 ro.vendor.mtk_shutdown_support=0
 init.userspace_reboot.is_supported=true
+
+#Poweron
+ro.config.hw_quickpoweron=true
 
 # SurfaceFlinger
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
@@ -220,6 +235,15 @@ debug.sf.disable_client_composition_cache=1
 debug.sf.enable_transaction_tracing=false
 debug.sf.enable_gl_backpressure=1
 debug.sf.predict_hwc_composition_strategy=0
+
+debug.sf.hw=1
+persist.sys.ui.hw=1
+debug.performance.tuning=1
+video.accelerate.hw=1
+debug.egl.profiler=1
+debug.egl.hw=1
+debug.composition.type=gpu
+
 
 # TEE
 ro.vendor.mtk_tee_gp_support=1
